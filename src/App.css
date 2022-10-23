@@ -1,38 +1,148 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Lato", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  /* transition: background-color 200ms ease; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.three-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2485ed50;
+}
+
+.logo {
+  width: 120px;
+}
+
+.top-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.three-container canvas {
+  position: absolute;
+}
+
+.content {
+  width: 100%;
+  max-width: 1210px;
+  height: 100%;
+  max-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  padding-bottom: 90px;
+}
+
+.bottom-container {
+  width: 100%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  position: relative;
+  z-index: 900;
+  pointer-events: all;
 }
 
-.App-link {
-  color: #61dafb;
+.buttons-container {
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateX(112px);
+  position: relative;
+  z-index: 100;
+  pointer-events: all;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h3 {
+  width: 224px;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 20px 40px;
+  padding: 10px 18px;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+  -webkit-filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.35));
+  background-color: #2485ed30;
+  transform: scale(1);
+  transition: transform 100ms ease-out;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+a {
+  cursor: pointer;
+  pointer-events: all;
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.other-component {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  pointer-events: none;
+}
+
+.pin-spacer {
+  pointer-events: none;
+}
+
+@media (max-width: 1025px) {
+  .content {
+    min-height: 100vh;
+    padding: 50px 20px;
   }
-  to {
-    transform: rotate(360deg);
+  .bottom-container {
+    flex-direction: column;
+  }
+
+  .buttons-container {
+    margin-left: 0;
+    margin-right: 0;
+    transform: translateX(0);
+  }
+
+  h3 {
+    text-align: center;
+    margin-top: 15px;
   }
 }
